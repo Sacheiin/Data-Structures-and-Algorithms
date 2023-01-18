@@ -51,3 +51,9 @@ my_linked_lists.append(17)
 print('head:', my_linked_lists.head.value)
 print('tail:',my_linked_lists.tail.value)
 print('Length:', my_linked_list.length)
+#returns 2 nodes
+print(my_linked_lists.pop())
+#returns 1 node
+print(my_linked_lists.pop())
+#returns None
+print(my_linked_lists.pop())
