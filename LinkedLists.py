@@ -64,6 +64,14 @@ class LinkedLists:
 		self.tail = None
 	return temp.value
 
+   def get(self, index):
+	if index < 0 or index >= self.length:
+		return None
+	temp = self.head
+	for _ in range(index):
+		temp = temp.next
+	return temp
+
 
 
 
@@ -92,3 +100,4 @@ print(my_linked_lists.pop_first())
 print(my_linked_lists.pop_first())
 #returns None
 print(my_linked_lists.pop_first())
+print(my_linked_lists.get(3))
