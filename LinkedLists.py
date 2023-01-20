@@ -72,9 +72,18 @@ class LinkedLists:
 		temp = temp.next
 	return temp
 
+    def set_value(self, index, value):
+	temp = self.get(index)
+	if temp is not None:
+		temp.value = value
+		return True
+	return False
 
 
 
+
+'''
+my_linked_lists.set_value(1, 4)
 my_linked_lists = LinkedLists(4)
 my_linked_lists = LinkedLists(12)
 my_linked_lists = LinkedLists(13)
@@ -101,3 +110,4 @@ print(my_linked_lists.pop_first())
 #returns None
 print(my_linked_lists.pop_first())
 print(my_linked_lists.get(3))
+'''
