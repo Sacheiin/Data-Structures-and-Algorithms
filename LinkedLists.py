@@ -1,21 +1,22 @@
+#Node is an class object that is connected to one another to form a LinkedList
 class Node:
    def __init__(self, value):
 	    self.value = value
 	    self.next = None
-
+#A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. 
 class LinkedLists:
    def __init__(self, value):
        new_node = Node(value)
        self.head = new_node
        self.tail = new_node
        self.length = 1
-	
+# A method to print the list	
    def Print_list(self):
 	    temp = self.head
 	    while temp is not None:
 		    print(temp.value)
 		    temp = temp.next
-		
+#method to append values into list	
    def append(self, value):
 	    new_node = Node(value)
 	    if self.length == 0:
@@ -25,7 +26,7 @@ class LinkedLists:
 		    self.tail.next = new_node
 		    self.tail = new_node
 	    self.length +=1
-	
+# pop is a method to remove tail value from linked list
    def pop(self):
 	    if self.length == 0:
 		    return None
@@ -41,7 +42,7 @@ class LinkedLists:
 		    self.head = None
 		    self.tail = None
 	    return temp
-  
+  # prepend is a method to add head value into linkedlist
    def prepend(self, value):
 	    new_node = Node(value)
 	    if self.length == 0:
@@ -52,7 +53,7 @@ class LinkedLists:
 		    self.head =new_node
 	    self.length += 1
 	    return True
-	
+# pop first is a method remove head value from linked list	
    def pop_first(self, value):
 	if self.length == 0:
 		return None
@@ -63,7 +64,7 @@ class LinkedLists:
 	if self.length == 0:
 		self.tail = None
 	return temp.value
-
+# get method is used to fetch value from a linked list
    def get(self, index):
 	if index < 0 or index >= self.length:
 		return None
@@ -71,14 +72,14 @@ class LinkedLists:
 	for _ in range(index):
 		temp = temp.next
 	return temp
-
+# set value is a method to replace existing values in a linkedlist
     def set_value(self, index, value):
 	temp = self.get(index)
 	if temp is not None:
 		temp.value = value
 		return True
 	return False
-
+# insert method is used to insert a value anywhere into a linked list
    def insert(self, index, value):
 	if index < 0 or index > self.length:
 		return False
