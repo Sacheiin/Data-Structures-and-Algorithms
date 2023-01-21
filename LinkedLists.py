@@ -128,7 +128,7 @@ class D_Node:
         self.value = value
         self.next = None
         self.prev = None
-        
+# This is a doubly linked list class is a collection of nodes that is with nodes linked to previous and next nodes    
 class DoublyLinkedLists:
     def __init__(self, value):
         new_node = D_Node(value)
