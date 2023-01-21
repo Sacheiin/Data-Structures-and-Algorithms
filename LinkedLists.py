@@ -94,6 +94,23 @@ class LinkedLists:
 	self.length += 1
 	return True
 	
+    def remove(self, index):
+        if index < 0 or index > self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        if index > 0 or index < self.length:
+            pre = self.get(index-1)
+            temp = self.get(index)
+            #pre.next = self.get(index + 1) why not this?
+            pre.next = temp.next
+            temp.next = None
+            self.length -= 1
+            return True
+        return False
+	
 
 
 
