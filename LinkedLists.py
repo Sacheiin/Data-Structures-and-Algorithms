@@ -110,18 +110,36 @@ class LinkedLists:
             self.length -= 1
             return True
         return False
+
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
 	
 
 
 
 
 '''
-my_linked_lists = LinkedLists(4)
-my_linked_lists.insert(5, 90)
-my_linked_lists.set_value(1, 4)
+my_linked_lists = LinkedLists(1)
+my_linked_lists.insert(2, 2)
+my_linked_lists.set_value(3, 3)
 my_linked_lists.Print_list()
-my_linked_lists.append(17)
-my_linked_lists.remove(2)
+my_linked_lists.append(4)
+my_linked_lists.append(5)
+my_linked_lists.append(6)
+my_linked_lists.Print_list()
+print('\n')
+my_linked_lists.reverse()
+my_linked_lists.Print_list()
+my_linked_lists.remove(6)
 print('head:', my_linked_lists.head.value)
 print('tail:',my_linked_lists.tail.value)
 print('Length:', my_linked_lists.length)
