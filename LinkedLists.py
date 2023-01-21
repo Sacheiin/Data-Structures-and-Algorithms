@@ -93,7 +93,7 @@ class LinkedLists:
 	temp.next = new_node
 	self.length += 1
 	return True
-# to remove a value from the liked list
+# to remove a value from the linked list
     def remove(self, index):
         if index < 0 or index > self.length:
             return None
