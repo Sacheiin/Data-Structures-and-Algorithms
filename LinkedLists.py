@@ -122,12 +122,43 @@ class LinkedLists:
             temp.next = before
             before = temp
             temp = after
-	
-
-
-
+#This is Node Class for Doubly linked list difference between singular linked list is that this node is linked to its previous node as well 		
+class D_Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None
+        
+class DoublyLinkedLists:
+    def __init__(self, value):
+        new_node = D_Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+        
+    def Print_list(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+            
+            
+    def append(self, value):
+        new_node = D_Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+            self.length += 1
+            return True
 
 '''
+my_doubly_linked_list = DoublyLinkedLists(1)
+my_doubly_linked_list.append(2)
+my_doubly_linked_list.Print_list()
 my_linked_lists = LinkedLists(1)
 my_linked_lists.insert(2, 2)
 my_linked_lists.set_value(3, 3)
