@@ -135,14 +135,14 @@ class DoublyLinkedLists:
         self.head = new_node
         self.tail = new_node
         self.length = 1
-        
+# This is a simple print list method to return all the values present in doubly linked list       
     def Print_list(self):
         temp = self.head
         while temp is not None:
             print(temp.value)
             temp = temp.next
             
-            
+# this is a append method to add values as a tail to the linked list         
     def append(self, value):
         new_node = D_Node(value)
         if self.head is None:
