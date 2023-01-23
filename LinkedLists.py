@@ -154,7 +154,7 @@ class DoublyLinkedLists:
             self.tail = new_node
             self.length += 1
             return True
-   
+   # this method removes the tail value from a doubly linked list
      def pop(self):
         if(self.length == 0):
             return None    
